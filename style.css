@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+    padding:0;
+    margin:0;
+
+}
+
+body {
+    font-family: Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+    display:flex;
+    flex-flow: column;
+}
+
+header {
+    font-size:32px;
+    text-align: center;
+    padding:20px;
+}
+
+#body-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#calc-con {
+    display: flex;
+    border:4px grey solid;
+    background-color: black;
+    width: 25vw;
+    height:75vh;
+}
+
+#display {
+    margin:10px;
+    flex:1;
+    background-color: aliceblue;
+    width:95%;
+    height:15%;
+
+}
