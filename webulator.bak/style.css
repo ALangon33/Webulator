@@ -18,8 +18,15 @@ header {
     padding:20px;
 }
 
+#body-con {
+    display: flex;
+    flex:1;
+    flex-flow:row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
 #calc-con {
-    align-self: center;
     display: flex;
     flex-direction: column;
     padding:4px;
