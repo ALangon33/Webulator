@@ -1,7 +1,7 @@
 // Create varibles for math
-let a;
-let b;
-let operator;
+let a = null;
+let b = null;
+let operator = undefined;
 
 // Create math functions
 const add = (a, b) => a + b;
@@ -16,21 +16,31 @@ const display = document.getElementById("display");
 const displayOutput = document.createElement("p");
 const numbers = Array.from(document.getElementsByClassName("number"));
 
-// for (n = 0; n < numbers.length; n++) {
-//     numbers[n].addEventListener('click', () => {
-//         displayOutput.textContent = a + a;
-//         display.appendChild(displayOutput);
-//     })
-// }
-
-
-
 numbers.forEach(number => number.addEventListener('click', () => {
-    if (!a) {
+    if (a === null) {
         a = number.textContent;
-    } else {
+        displayOutput.textContent = a;
+        display.appendChild(displayOutput);
+    } else if (a && !operator) {
         a = a + number.textContent;
+        displayOutput.textContent = a;
+        display.appendChild(displayOutput);
+    } else if (operator && b === null) {
+        b = number.textContent;
+        displayOutput.textContent = b;
+        display.appendChild(displayOutput);
+    } else {
+        b = b + number.textContent;
+        displayOutput.textContent = b;
+        display.appendChild(displayOutput);
     };
-    displayOutput.textContent = a;
-    display.appendChild(displayOutput);
 }));
+
+// Clear numbers from display as well as operator if defined
+const clear = document.getElementById("clear");
+clear.addEventListener('click', () => {
+     if (a) {a = null};
+     if (b) {b = null};
+     if (operator) {operator = undefined};
+    display.removeChild(displayOutput);
+    });
