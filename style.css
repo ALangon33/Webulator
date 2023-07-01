@@ -33,7 +33,7 @@ header {
 #display {
     align-self: center;
     margin:10px;
-    background-color: aliceblue;
+    background-color: whitesmoke;
     width:95%;
     height:15%;
 }
@@ -42,6 +42,12 @@ button {
     flex:1 1 20%;
     font-size: 32px;
     border-radius:1rem;
+    background-color: whitesmoke;
+    border: 5px grey double;
+}
+
+button:hover {
+    background-color: rgb(214, 214, 214);
 }
 
 #button-con {
