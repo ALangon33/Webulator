@@ -6,9 +6,20 @@
 
 }
 
+body,
+#button-con,
+#clear-commands,
+#calc-con,
+#body-con,
+#number-buttons,
+#right-side,
+#left-side,
+#operator-buttons {
+    display: flex;
+}
+
 body {
     font-family: Roboto, "Open Sans", "Helvetica Neue", sans-serif;
-    display:flex;
     flex-flow: column;
 }
 
@@ -19,24 +30,50 @@ header {
 }
 
 #body-con {
-    display: flex;
+    flex:1;
+    flex-flow:row nowrap;
     align-items: center;
     justify-content: center;
 }
 
 #calc-con {
-    display: flex;
+    flex-direction: column;
     border:4px grey solid;
     background-color: black;
     width: 25vw;
     height:75vh;
+    align-items: center;
 }
 
 #display {
     margin:10px;
-    flex:1;
     background-color: aliceblue;
     width:95%;
     height:15%;
+}
 
+button {
+    flex:1;
+    font-size: 32px;
+    gap:2px;
+}
+
+#button-con {
+    flex:1;
+}
+
+#left-side {
+    flex-direction: column;
+}
+
+#number-buttons {
+    flex-flow:row wrap;
+}
+
+#zero {
+    flex:2;
+}
+
+#operator-buttons {
+    flex-flow:column nowrap;
 }
