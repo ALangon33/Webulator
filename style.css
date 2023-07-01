@@ -10,6 +10,8 @@ body {
     display: flex;
     font-family: Roboto, "Open Sans", "Helvetica Neue", sans-serif;
     flex-flow: column;
+    background-color: indigo;
+    color:white;
 }
 
 header {
