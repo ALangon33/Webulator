@@ -114,6 +114,11 @@ divideButton.addEventListener('click', () => {
 const equalsButton = document.getElementById("equals");
 console.log(equalsButton);
 equalsButton.addEventListener('click', () => {
+    if (operator === divide && b === "0") {
+        displayOutput.textContent = "58008";
+        display.appendChild(displayOutput);
+        return;
+    }
     mathOutput = operator(Number(a), Number(b));
     if (confirmFloat(mathOutput)) {
         displayOutput.textContent = parseFloat(mathOutput).toFixed(2).toString();        
