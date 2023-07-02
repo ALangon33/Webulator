@@ -123,7 +123,7 @@ equalsButton.addEventListener('click', () => {
         return;
     }
     mathOutput = operator(Number(a), Number(b));
-    a = mathOutput.toString();
+    // a = mathOutput.toString();
     if (confirmFloat(mathOutput)) {
         displayOutput.textContent = parseFloat(mathOutput).toFixed(2).toString();        
     } else {

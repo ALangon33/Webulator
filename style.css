@@ -57,7 +57,7 @@ button {
 }
 
 button:hover {
-    box-shadow: 0 0 1rem black;
+    box-shadow: 0 0 0.25rem black;
     background-color: rgb(26, 25, 25);
     transform: scale(1.05);
 }
