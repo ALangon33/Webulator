@@ -44,3 +44,12 @@ clear.addEventListener('click', () => {
      if (operator) {operator = undefined};
     display.removeChild(displayOutput);
     });
+
+// Provide inversion method
+const inverter = document.getElementById("inverter");
+inverter.addEventListener('click', () => {   
+    newOutput = invert(Number(a));
+    a = newOutput;
+    displayOutput.textContent = newOutput;
+    display.appendChild(displayOutput);
+});
