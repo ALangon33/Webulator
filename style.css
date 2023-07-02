@@ -21,6 +21,7 @@ header {
 }
 
 #calc-con {
+    box-shadow: 0 0 3rem black;
     align-self: center;
     display: flex;
     flex-direction: column;
@@ -52,10 +53,13 @@ button {
     background-color: black;
     color: rgb(211, 104, 16);
     border: 4px rgb(167, 81, 11) double;
+    transition: all .07s ease;
 }
 
 button:hover {
-    background-color: rgb(48, 46, 46);
+    box-shadow: 0 0 1rem black;
+    background-color: rgb(26, 25, 25);
+    transform: scale(1.05);
 }
 
 #button-con {
