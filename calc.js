@@ -117,15 +117,20 @@ equalsButton.addEventListener('click', () => {
     if (operator === divide && b === "0") {
         displayOutput.textContent = "58008";
         display.appendChild(displayOutput);
+        b = null;
+        a = null;
+        operator = undefined;
         return;
     }
     mathOutput = operator(Number(a), Number(b));
+    a = mathOutput.toString();
     if (confirmFloat(mathOutput)) {
         displayOutput.textContent = parseFloat(mathOutput).toFixed(2).toString();        
     } else {
         displayOutput.textContent = mathOutput.toString();        
     }
     display.appendChild(displayOutput);
+
     b = null;
     operator = undefined;
 });
