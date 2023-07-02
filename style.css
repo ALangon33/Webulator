@@ -50,7 +50,7 @@ button {
     font-size: 2vw;
     border-radius: 1rem;
     background-color: black;
-    color: white;
+    color: rgb(211, 104, 16);
     border: 4px rgb(167, 81, 11) double;
 }
 
@@ -68,4 +68,13 @@ button:hover {
 
 #zero {
     flex: 2 1 40%;
+}
+
+.operator {
+    color: rgb(42, 167, 11);
+    border: 4px rgb(42, 167, 11) double;
+}
+.clear-tier {
+    color: rgb(149, 11, 167);
+    border: 4px rgb(149, 11, 167) double;
 }
