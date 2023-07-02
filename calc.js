@@ -42,7 +42,7 @@ clear.addEventListener('click', () => {
      if (a) {a = null};
      if (b) {b = null};
      if (operator) {operator = undefined};
-    display.removeChild(displayOutput);
+     display.removeChild(displayOutput);
     });
 
 // Provide inversion method
@@ -50,6 +50,15 @@ const inverter = document.getElementById("inverter");
 inverter.addEventListener('click', () => {   
     newOutput = invert(Number(a));
     a = newOutput;
-    displayOutput.textContent = newOutput;
+    displayOutput.textContent = a;
+    display.appendChild(displayOutput);
+});
+
+// Make percent work
+const percentButton = document.getElementById("percent")
+percentButton.addEventListener('click', () => {
+    newOutput = percent(Number(a));
+    a = newOutput;
+    displayOutput.textContent = a;
     display.appendChild(displayOutput);
 });
