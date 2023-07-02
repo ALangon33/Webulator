@@ -39,15 +39,15 @@ numbers.forEach(number => number.addEventListener('click', appendToOutput = () =
 // Clear numbers from display as well as operator if defined
 const clear = document.getElementById("clear");
 clear.addEventListener('click', () => {
-     if (a) {a = null};
-     if (b) {b = null};
-     if (operator) {operator = undefined};
-     display.removeChild(displayOutput);
-    });
+    if (a) { a = null };
+    if (b) { b = null };
+    if (operator) { operator = undefined };
+    if (display.contains(displayOutput)) { display.removeChild(displayOutput) };
+});
 
 // Provide inversion method
 const inverter = document.getElementById("inverter");
-inverter.addEventListener('click', () => {   
+inverter.addEventListener('click', () => {
     newOutput = invert(Number(a));
     a = newOutput;
     displayOutput.textContent = a;
@@ -73,16 +73,51 @@ decimal.addEventListener('click', () => {
     } else if (!operator && a.includes('.')) {
         decimal.removeEventListener('click', appendToOutput)
     } else if (!operator && !a.includes('.')) {
-        a = a+decimal.textContent;
+        a = a + decimal.textContent;
         displayOutput.textContent = a;
         display.appendChild(displayOutput);
     } else if (operator && b === null) {
-        b = number.textContent;
+        b = "0.";
         displayOutput.textContent = b;
         display.appendChild(displayOutput);
+    } else if (operator && b.includes('.')) {
+        decimal.removeEventListener('click', appendToOutput)
     } else {
-        b = b + number.textContent;
+        b = b + decimal.textContent;
         displayOutput.textContent = b;
         display.appendChild(displayOutput);
     };
+});
+
+// Give operations event listeners
+// Start with add & equals for testing
+const addButton = document.getElementById("add");
+addButton.addEventListener('click', () => {
+    operator = add;
+});
+
+const subtractButton = document.getElementById("subtract");
+subtractButton.addEventListener('click', () => {
+    operator = subtract;
+});
+
+const multiplyButton = document.getElementById("multiply");
+multiplyButton.addEventListener('click', () => {
+    operator = multiply;
+});
+
+const divideButton = document.getElementById("divide");
+divideButton.addEventListener('click', () => {
+    operator = divide;
+});
+
+const equalsButton = document.getElementById("equals");
+console.log(equalsButton);
+equalsButton.addEventListener('click', () => {
+    mathOutput = operator(Number(a), Number(b));
+    displayOutput.textContent = mathOutput;
+    display.appendChild(displayOutput);
+    a = mathOutput;
+    b = null;
+    operator = undefined;
 });
