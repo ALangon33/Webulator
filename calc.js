@@ -117,7 +117,7 @@ equalsButton.addEventListener('click', () => {
     mathOutput = operator(Number(a), Number(b));
     displayOutput.textContent = mathOutput;
     display.appendChild(displayOutput);
-    a = mathOutput;
+    a = mathOutput.toString();
     b = null;
     operator = undefined;
 });

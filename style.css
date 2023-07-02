@@ -41,13 +41,13 @@ header {
     width: 95%;
     height: 15%;
     border: 4px rgb(167, 81, 11) double;
-    font-size: 56px;
+    font-size: 4vw;
     text-align: right;
 }
 
 button {
     flex: 1 1 20%;
-    font-size: 32px;
+    font-size: 2vw;
     border-radius: 1rem;
     background-color: black;
     color: white;
