@@ -16,7 +16,7 @@ const display = document.getElementById("display");
 const displayOutput = document.createElement("p");
 const numbers = Array.from(document.getElementsByClassName("number"));
 
-numbers.forEach(number => number.addEventListener('click', () => {
+numbers.forEach(number => number.addEventListener('click', appendToOutput = () => {
     if (a === null) {
         a = number.textContent;
         displayOutput.textContent = a;
@@ -61,4 +61,28 @@ percentButton.addEventListener('click', () => {
     a = newOutput;
     displayOutput.textContent = a;
     display.appendChild(displayOutput);
+});
+
+// Make only one decimal allowable at any given time
+const decimal = document.getElementById("decimal");
+decimal.addEventListener('click', () => {
+    if (a === null) {
+        a = "0.";
+        displayOutput.textContent = a;
+        display.appendChild(displayOutput);
+    } else if (!operator && a.includes('.')) {
+        decimal.removeEventListener('click', appendToOutput)
+    } else if (!operator && !a.includes('.')) {
+        a = a+decimal.textContent;
+        displayOutput.textContent = a;
+        display.appendChild(displayOutput);
+    } else if (operator && b === null) {
+        b = number.textContent;
+        displayOutput.textContent = b;
+        display.appendChild(displayOutput);
+    } else {
+        b = b + number.textContent;
+        displayOutput.textContent = b;
+        display.appendChild(displayOutput);
+    };
 });
