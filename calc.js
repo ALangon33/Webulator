@@ -115,9 +115,21 @@ const equalsButton = document.getElementById("equals");
 console.log(equalsButton);
 equalsButton.addEventListener('click', () => {
     mathOutput = operator(Number(a), Number(b));
-    displayOutput.textContent = mathOutput;
+    if (confirmFloat(mathOutput)) {
+        displayOutput.textContent = parseFloat(mathOutput).toFixed(2).toString();        
+    } else {
+        displayOutput.textContent = mathOutput.toString();        
+    }
     display.appendChild(displayOutput);
-    a = mathOutput.toString();
     b = null;
     operator = undefined;
 });
+
+const confirmFloat = (num) => {
+    num = num.toString()
+   if (num.includes('.')){
+       return true;
+   } else {
+       return false;
+   }
+}
